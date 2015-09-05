@@ -1,5 +1,18 @@
-<html>
-    <p>Hello Yes</p>
-    <p>Get Schwifty in here...?</p>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/AqheqiqGiE0" frameborder="0" allowfullscreen></iframe>
-</html>
+{% extends "blog/base.html" %}
+
+{% block content %}
+    {% for post in posts %}
+        <div class="post">
+            <div class="date">
+                {{ post.published_date }}
+            </div>
+            <h1><a href="{% url "post_detail" pk=post.pk %}">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaks }}</p>
+
+            {% if post.video %}
+            <iframe width="560" height="315" src="{{ post.video }}" frameborder="0" allowfullscreen></iframe>
+            {% endif %}
+            
+        </div>
+    {% endfor %}
+{% endblock content %}
