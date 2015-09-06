@@ -4,11 +4,19 @@
     <div class="post">
         {% if post.published_date %}
             <div class="date">
-                {{ post.published_date }}
+            {{ post.published_date }}
             </div>
         {% endif %}
+
+        {% if user.is_authenticated %}
+            <a class="btn btn-default" href="{% url "post_edit" pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        {% endif %}
+
         <h1>{{ post.title }}</h1>
         <p>{{ post.text|linebreaks }}</p>
-        <iframe width="560" height="315" src="{{ post.video }}" frameborder="0" allowfullscreen></iframe>
+        {% if post.video %}
+            <iframe width="560" height="315" src="{{ post.video }}" frameborder="0" allowfullscreen></iframe>
+        {% endif %}
+
     </div>
 {% endblock %}
