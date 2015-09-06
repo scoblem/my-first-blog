@@ -25,7 +25,7 @@ SECRET_KEY = '^@dpxx!=abx1eqeowev8@s4$wiu=a)2detdqhizmq5d+^=tw%4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['192.168.0.12', '127.0.0.1', 'http://necrolisk.pythonanywhere.com/']
+ALLOWED_HOSTS = ['192.168.0.12', '127.0.0.1', 'necrolisk.pythonanywhere.com']
 
 
 # Application definition
