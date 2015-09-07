@@ -27,6 +27,14 @@ h1, h2, h3, h4 {
     float: right;
 }
 
+.publish {
+    height: 28;
+    width: 65;
+    padding: 4px 4px 4px 4px;
+
+
+}
+
 .post-form textarea, .post-form input {
     width: 100%;
 }
