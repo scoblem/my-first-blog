@@ -12,7 +12,7 @@
             {% if post.video %}
             <iframe width="560" height="315" src="{{ post.video }}" frameborder="0" allowfullscreen></iframe>
             {% endif %}
-            
+            <p><a href="{% url "blog.views.post_detail" pk=post.pk %}">Comments: {{ post.approved_comments.count }}</a></p>
         </div>
     {% endfor %}
 {% endblock content %}
